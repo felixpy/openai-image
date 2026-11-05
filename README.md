@@ -11,7 +11,8 @@
   <a href="package.json"><img alt="Node.js 20 or newer" src="https://img.shields.io/badge/node-%3E%3D20-339933?logo=nodedotjs&logoColor=white"></a>
 </p>
 
-<img src="docs/assets/hero.gif" alt="Animated GIF of a cartoon cat at a laptop giving a thumbs-up, captioned Works on my machine" width="512">
+<img src="docs/assets/tibo-quota.gif" alt="Animated GIF of a cartoon Tibo in sunglasses while a quota bar fills from 5% to full reset" width="512">
+<p><sub>Animated GIF output from <code>openai_image_edit</code> (<code>output_format: "gif"</code>).</sub></p>
 
 <p>
   <a href="README.md">English</a>
@@ -112,12 +113,6 @@ env = { OPENAI_API_KEY = "sk-..." }
 | `openai_image_edit` | `images.edit` | `prompt`, `image_paths`, `output_dir` | Shared image fields, plus `mask_path`, `markup_path`, `input_fidelity` |
 
 `openai_image_generate` creates still images, animated GIFs (`output_format=gif`), or SVG. `openai_image_edit` edits or composes up to 16 reference images, optionally guided by a mask or a markup overlay. Both save files under `output_dir` and return their paths.
-
-<p align="center">
-  <img src="docs/assets/edit.gif" alt="Animated GIF of a potted cactus spinning" width="240">
-  <img src="docs/assets/meme.png" alt="Still PNG of a cartoon cat at a laptop giving a thumbs-up, captioned Works on my machine" width="240">
-</p>
-<p align="center"><sub>GIF from edit (verified 2026-11-05) and a still PNG from generate.</sub></p>
 
 A successful result is text JSON. URLs and `revised_prompt` are included only when the API sends them.
 

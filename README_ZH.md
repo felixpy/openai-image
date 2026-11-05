@@ -11,7 +11,8 @@
   <a href="package.json"><img alt="Node.js 20 或更高版本" src="https://img.shields.io/badge/node-%3E%3D20-339933?logo=nodedotjs&logoColor=white"></a>
 </p>
 
-<img src="docs/assets/hero.gif" alt="动画 GIF：一只卡通猫坐在笔记本电脑前竖起大拇指，标题是 Works on my machine" width="512">
+<img src="docs/assets/tibo-quota.gif" alt="动画 GIF：戴墨镜的卡通 Tibo，配额条从 5% 涨到 full reset" width="512">
+<p><sub>由 <code>openai_image_edit</code> 输出的动画 GIF（<code>output_format: "gif"</code>）。</sub></p>
 
 <p>
   <a href="README.md">English</a>
@@ -112,12 +113,6 @@ env = { OPENAI_API_KEY = "sk-..." }
 | `openai_image_edit` | `images.edit` | `prompt`、`image_paths`、`output_dir` | 共用图片参数，以及 `mask_path`、`markup_path`、`input_fidelity` |
 
 `openai_image_generate` 生成静态图、动画 GIF（`output_format=gif`）或 SVG。`openai_image_edit` 编辑图片，或用最多 16 张参考图合成，可选遮罩或标注图层。两个工具都把文件保存到 `output_dir`，并返回路径。
-
-<p align="center">
-  <img src="docs/assets/edit.gif" alt="一盆仙人掌旋转的动画 GIF" width="240">
-  <img src="docs/assets/meme.png" alt="静态 PNG：一只卡通猫坐在笔记本电脑前竖起大拇指，标题是 Works on my machine" width="240">
-</p>
-<p align="center"><sub>编辑得到的 GIF（2026-11-05 已验证）以及生成得到的静态 PNG。</sub></p>
 
 成功时返回一段 JSON 文本。只有 API 实际返回时，结果里才会带上 URL 和 `revised_prompt`。
 
