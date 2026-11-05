@@ -25,7 +25,7 @@
 `openai-image` 是一个通过 stdio 通信的 [Model Context Protocol](https://modelcontextprotocol.io) 服务器。它调用 OpenAI 官方 Images API，把文件写到绝对路径 `output_dir`，并返回路径和元数据。工具结果里不会出现 base64。
 
 ```sh
-npx -y @felixpy/openai-image
+npx -y @felixpy/openai-image@latest
 ```
 
 ## 快速开始
@@ -48,6 +48,8 @@ export OPENAI_API_KEY=sk-...
 
 下面的配置都通过 stdio 启动已发布的包。请在本地把 `sk-...` 换成自己的密钥，不要把真实密钥提交到仓库。
 
+不写版本的 `npx -y <pkg>` 可能一直复用缓存里的旧版本，而 `@latest` 会在每次启动时向 npm 查询；若要可复现的行为，请改用固定版本，例如 `@0.2.0`。
+
 #### Cursor
 
 `~/.cursor/mcp.json` 或项目里的 `.cursor/mcp.json`：
@@ -57,7 +59,7 @@ export OPENAI_API_KEY=sk-...
   "mcpServers": {
     "openai-image": {
       "command": "npx",
-      "args": ["-y", "@felixpy/openai-image"],
+      "args": ["-y", "@felixpy/openai-image@latest"],
       "env": {
         "OPENAI_API_KEY": "sk-..."
       }
@@ -77,7 +79,7 @@ Linux：`~/.config/Claude/claude_desktop_config.json`
   "mcpServers": {
     "openai-image": {
       "command": "npx",
-      "args": ["-y", "@felixpy/openai-image"],
+      "args": ["-y", "@felixpy/openai-image@latest"],
       "env": {
         "OPENAI_API_KEY": "sk-..."
       }
@@ -91,7 +93,7 @@ Linux：`~/.config/Claude/claude_desktop_config.json`
 ```sh
 claude mcp add openai-image \
   -e OPENAI_API_KEY=sk-... \
-  -- npx -y @felixpy/openai-image
+  -- npx -y @felixpy/openai-image@latest
 ```
 
 #### Codex
@@ -101,7 +103,7 @@ claude mcp add openai-image \
 ```toml
 [mcp_servers.openai-image]
 command = "npx"
-args = ["-y", "@felixpy/openai-image"]
+args = ["-y", "@felixpy/openai-image@latest"]
 env = { OPENAI_API_KEY = "sk-..." }
 ```
 

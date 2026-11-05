@@ -25,7 +25,7 @@
 `openai-image` is a stdio [Model Context Protocol](https://modelcontextprotocol.io) server. It calls the official OpenAI Images API, writes the files to an absolute `output_dir`, and returns paths plus metadata. Tool results never include base64.
 
 ```sh
-npx -y @felixpy/openai-image
+npx -y @felixpy/openai-image@latest
 ```
 
 ## Quick start
@@ -48,6 +48,8 @@ export OPENAI_API_KEY=sk-...
 
 Every snippet starts the published package over stdio. Replace `sk-...` locally. Do not commit a real key.
 
+Bare `npx -y <pkg>` can keep reusing a cached older version, while `@latest` makes npx check npm on each start; pin a version like `@0.2.0` instead if you want reproducible behavior.
+
 #### Cursor
 
 `~/.cursor/mcp.json` or `.cursor/mcp.json`:
@@ -57,7 +59,7 @@ Every snippet starts the published package over stdio. Replace `sk-...` locally.
   "mcpServers": {
     "openai-image": {
       "command": "npx",
-      "args": ["-y", "@felixpy/openai-image"],
+      "args": ["-y", "@felixpy/openai-image@latest"],
       "env": {
         "OPENAI_API_KEY": "sk-..."
       }
@@ -77,7 +79,7 @@ Linux: `~/.config/Claude/claude_desktop_config.json`
   "mcpServers": {
     "openai-image": {
       "command": "npx",
-      "args": ["-y", "@felixpy/openai-image"],
+      "args": ["-y", "@felixpy/openai-image@latest"],
       "env": {
         "OPENAI_API_KEY": "sk-..."
       }
@@ -91,7 +93,7 @@ Linux: `~/.config/Claude/claude_desktop_config.json`
 ```sh
 claude mcp add openai-image \
   -e OPENAI_API_KEY=sk-... \
-  -- npx -y @felixpy/openai-image
+  -- npx -y @felixpy/openai-image@latest
 ```
 
 #### Codex
@@ -101,7 +103,7 @@ claude mcp add openai-image \
 ```toml
 [mcp_servers.openai-image]
 command = "npx"
-args = ["-y", "@felixpy/openai-image"]
+args = ["-y", "@felixpy/openai-image@latest"]
 env = { OPENAI_API_KEY = "sk-..." }
 ```
 
