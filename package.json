@@ -1,0 +1,56 @@
+{
+  "name": "@felixpy/openai-image",
+  "version": "0.1.0",
+  "description": "MCP server for OpenAI image generation and editing, including GIF and SVG",
+  "type": "module",
+  "license": "MIT",
+  "author": "Felix Yang (felixpy)",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "openai-image": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixpy/openai-image.git"
+  },
+  "bugs": {
+    "url": "https://github.com/felixpy/openai-image/issues"
+  },
+  "homepage": "https://github.com/felixpy/openai-image#readme",
+  "keywords": [
+    "mcp",
+    "openai",
+    "gpt-image",
+    "image-generation",
+    "image-editing",
+    "model-context-protocol"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "pretest": "npm run build",
+    "test": "node --test test/smoke.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "openai": "7.51.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "typescript": "7.0.2"
+  }
+}
