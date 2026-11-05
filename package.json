@@ -1,6 +1,6 @@
 {
   "name": "@felixpy/openai-image",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MCP server for OpenAI image generation and editing, including GIF and SVG",
   "type": "module",
   "license": "MIT",
